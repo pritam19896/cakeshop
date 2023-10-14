@@ -6,6 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  images = ['birthday.jpeg','custom.jpeg','farewell.jpeg','pastries.jpeg']
+
+  images = [
+    {
+      path:'../../../assets/mainimg/custom.jpeg',
+      picHeader: 'Custom Cakes'
+    },
+    {
+      path:'../../../assets/mainimg/farewell.jpeg',
+      picHeader: 'Farewell Cakes'
+    },
+    {
+      path:'../../../assets/mainimg/pastries.jpeg',
+      picHeader: 'Mouth Watering Pastries'
+    }, 
+    {
+      path:'../../../assets/mainimg/birthday.jpeg',
+      picHeader: 'Birthday Cakes'
+    },
+  ];
   
 }
