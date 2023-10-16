@@ -7,3 +7,18 @@
     color: red;
     text-shadow: 2px 1px pink;
 }
+
+.cake-img{
+    box-shadow: 4px 4px red;
+    border-radius: 10px;
+}
+
+.pad-content-left{
+    padding-left: 3rem;
+}
+
+@media screen and (max-width: 750px) {
+    .cakes-images-carousel{
+        height: 40vh;
+    }
+  }
