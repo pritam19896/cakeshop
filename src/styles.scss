@@ -2,3 +2,29 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+*{
+    background-color: black;
+    color: white;
+}
+
+// carousel
+
+.carousel-caption{		
+    background: transparent;
+}
+
+.cakes-Header-carousel{		
+ background: transparent;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent;
+}
+
+.carousel-indicators {
+    background-color: transparent;
+}
+
+
