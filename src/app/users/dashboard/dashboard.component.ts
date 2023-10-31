@@ -39,4 +39,27 @@ onResize() {
       },
       ];
 
+      cakeDetails = [
+        {
+          path:'../../../assets/mainimg/velvat.jpeg',
+          picHeader: 'Red Velvet Cakes'
+        },
+        {
+          path:'../../../assets/mainimg/chocochip.jpeg',
+          picHeader: 'Chocochip Cake Cakes'
+        },
+        {
+          path:'../../../assets/mainimg/creamecake.jpeg',
+          picHeader: 'Cream Cake'
+        }, 
+        {
+          path:'../../../assets/mainimg/fruitcake.jpeg',
+          picHeader: 'Fruit Cakes'
+        },
+        {
+          path:'../../../assets/mainimg/strawberrycake.jpeg',
+          picHeader: 'Strawberry Cake'
+        }
+        ];
+
       }

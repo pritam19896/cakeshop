@@ -10,21 +10,24 @@
 </ngb-carousel>
 <div class="card">
 	<div class="card-body">
-		<div class="container pt-5">
-			<div class="row">
+		<div class="container pt-2">
+			<div class="row pt-4 pb-4" *ngFor="let cake of cakeDetails">
 				<div class="col-md-4 col-sm-12  d-flex justify-content-center">
-					<img src="../../../assets/mainimg/velvat.jpeg" height="250px" width="250px" class="cake-img">	
+					<img [src]="cake.path"  height="250px" width="250px" class="cake-img">	
 				</div>
 				<div class="col-md-8 col-sm-12 pt-4 pad-content-left">
-					<h2 class="d-flex"  [ngClass]="{'justify-content-center': innerWidth == true}"><b>Red velvet</b></h2>
+					<!-- d-flex justify-content-center  [ngClass]="{'justify-content-center': innerWidth == true}" -->
+					<h3 class="d-flex" class="d-flex justify-content-center" ><b>{{cake.picHeader}}</b></h3>
 					<p> cake is traditionally a red, crimson, or scarlet-colored layer cake, layered with ermine icing.</p>
 					<p>Common ingredients include buttermilk, butter, cocoa, vinegar, and flour. Beet juice or red food coloring may be used for the color.</p>
+					<div class="d-flex justify-content-center">
 						<div class="btn-group custom-content-center" role="group"
-							aria-label="Basic example">
-						<button type="button" class="btn btn-success">+</button>
-							<button type="button" class="btn btn-success" disabled>1</button>
-							<button type="button" class="btn btn-success">-</button>
-					  	</div>	
+						aria-label="Basic example">
+					<button type="button" class="btn btn-success">+</button>
+						<button type="button" class="btn btn-success" disabled>1</button>
+						<button type="button" class="btn btn-success">-</button>
+					  </div>	
+					</div>	
 				</div>
 			</div>
 			</div>
