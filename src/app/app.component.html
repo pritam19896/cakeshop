@@ -1,1 +1,16 @@
-<app-dashboard></app-dashboard>
+<ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs navbar-light bg-light fixed-top">
+	<h2 class="pageheader"><img src="../../../assets/mainimg/cakelogo.jpeg" height="35px" width="35px">CakeShop</h2>
+	<li [ngbNavItem]="1">
+		<button ngbNavLink [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</button>
+	</li>
+	<li [ngbNavItem]="2">
+		<button ngbNavLink [routerLink]="['/user']" routerLinkActive="router-link-active"><b>Order</b></button>
+	</li>
+	
+	<li ngbNavItem class="ms-auto">
+		<button ngbNavLink  [routerLink]="['/login']" routerLinkActive="router-link-active">Login</button>
+	</li>
+</ul>
+<div class="pt-5">
+    <router-outlet></router-outlet>
+</div>
