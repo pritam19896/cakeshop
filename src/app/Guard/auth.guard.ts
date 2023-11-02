@@ -7,7 +7,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const currentmenu = route.url[0].path;
   const router =  inject(Router);
   const service = inject(LoginService);
-
+  console.log('service.haveaccess()',service.haveaccess());
     if(service.haveaccess()){
       return true
     // if( currentmenu == 'home' ){

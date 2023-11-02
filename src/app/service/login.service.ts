@@ -4,9 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
+  private yourVariable: any = null;
 
   constructor() { }
-  haveaccess(){
-    return false;
+
+  setVariable(newValue: any){
+    this.yourVariable = newValue;
+  }
+
+  haveaccess(){ 
+    // console.log('value',value);
+    // let loginValue:boolean = value;
+    // return loginValue;
+    return this.yourVariable;
   }
 }
