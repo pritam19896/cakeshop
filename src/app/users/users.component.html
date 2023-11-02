@@ -1,1 +1,41 @@
-<p>users works!</p>
+<h3 class="d-flex justify-content-center" style="color:red">Cakes</h3>
+<div class="card">
+	<div class="card-body">
+		<div class="container pt-2">
+			<div class="row pt-4 pb-4" *ngFor="let cake of cakeDetails;let indexOfelement=index;">
+				<div class="col-md-4 col-sm-12  d-flex justify-content-center">
+					<img [src]="cake.path"  height="250px" width="250px" class="cake-img">	
+				</div>
+				<div class="col-md-8 col-sm-12 pt-4 pad-content-left">
+					<h3 class="d-flex" class="d-flex justify-content-center" ><b>{{cake.picHeader}}</b></h3>
+					<p> cake is traditionally a red, crimson, or scarlet-colored layer cake, layered with ermine icing.</p>
+					<p>Common ingredients include buttermilk, butter, cocoa, vinegar, and flour. Beet juice or red food coloring may be used for the color.</p>
+					<p class="d-flex justify-content-center"><b><i>Rs</i> {{cake.price}}</b></p>
+                    <div class="d-flex justify-content-center">
+						<div class="btn-group custom-content-center" role="group"
+						aria-label="Basic example">
+					        <button type="button" class="btn btn-success" (click)="add(indexOfelement)">+</button>
+						    <button type="button" class="btn btn-success" disabled>{{cake.count}}</button>
+						    <button type="button" class="btn btn-success" (click)="remove(indexOfelement)">-</button>
+					  </div>	
+					</div>	
+				</div>
+			</div>
+			</div>
+<div class="pb-5"></div>
+	</div>
+</div>
+
+<div class="card d-flex justify-content-center look-custom">
+    <h5 class="card-header d-flex justify-content-center">User's Order</h5>
+    <div class="card-body">
+
+    <div>
+        <p>Name: <span><b>{{userName}}</b></span></p>
+        <p>Email: <span><b>{{email}}</b></span></p>
+        <p>Mobile No: <span><b>{{userName}}</b></span></p>
+    </div>
+
+    </div>
+</div>
+	
