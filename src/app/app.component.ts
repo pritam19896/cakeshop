@@ -9,5 +9,9 @@ export class AppComponent implements OnInit {
   title = 'cakeshop';
   ngOnInit() {
     localStorage.setItem('isLogin', 'no');
+    localStorage.setItem('username', '');
+    localStorage.setItem('email', '');
+    localStorage.setItem('mobile', '');
+    localStorage.setItem('DOB', '');
   }
 }

@@ -23,18 +23,29 @@ export class LoginComponent implements OnInit{
       DOB: ['', Validators.required],
     });
     this.isLoginValue =  localStorage.getItem('isLogin') == 'yes' ? true : false;
+    if(this.isLoginValue){
+      this.myForm.setValue({
+        username: localStorage.getItem('username'),
+        email: localStorage.getItem('email'),
+        mobile: localStorage.getItem('mobile'),
+        DOB: localStorage.getItem('DOB')
+      });
+    }
   }
 
   onSubmit(form: FormGroup) {
     if(form.valid){ 
-    console.log('Valid?', form.valid);
-    console.log('Name', form.value.username);
-    console.log('Email', form.value.email);
-    console.log('Message', form.value.mobile);
-    console.log('myForm',this.myForm);
     this.loginService.setVariable(true);
     localStorage.setItem('isLogin', 'yes');
     this.isLoginValue = true
+    localStorage.setItem('username', form.value.username);
+    localStorage.setItem('email', form.value.email);
+    localStorage.setItem('mobile', form.value.mobile);
+    localStorage.setItem('DOB', form.value.DOB);
+    console.log(`localStorage.getItem('username')`,localStorage.getItem('username'));
+    console.log(`localStorage.getItem('email')`,localStorage.getItem('email'));
+    console.log(`localStorage.getItem('mobile')`,localStorage.getItem('mobile'));
+    console.log(`localStorage.getItem('DOB')`,localStorage.getItem('DOB'));
     }else{
       alert('Please fill all the requiedDetails');
     }
@@ -50,6 +61,12 @@ export class LoginComponent implements OnInit{
 
   logout(){
     localStorage.setItem('isLogin', 'no');
+    localStorage.setItem('userDetails','');
+    localStorage.setItem('username', '');
+    localStorage.setItem('email', '');
+    localStorage.setItem('mobile','');
+    localStorage.setItem('DOB', '');
+    this.myForm.reset();
     this.isLoginValue = false;
     this.loginService.setVariable(false);
   }
