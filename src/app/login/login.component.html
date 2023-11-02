@@ -1,4 +1,4 @@
-<div class="card d-flex justify-content-center look-custom">
+<div class="card d-flex justify-content-center look-custom" *ngIf="!isLoginValue">
     <h5 class="card-header d-flex justify-content-center">Login</h5>
     <div class="card-body">
 
@@ -95,3 +95,10 @@
 
     </div>
   </div>
+
+
+  <div *ngIf="isLoginValue">   
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary" (click)="logout()">Logout</button>
+    </div> 
+</div>

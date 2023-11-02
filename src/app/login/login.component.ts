@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit{
 
   myForm: FormGroup | any;
   service = inject(LoginService);
+  isLoginValue = false;
 
   constructor(private fb: FormBuilder,private loginService: LoginService) {}
 
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit{
       mobile: ['', [Validators.required, Validators.pattern(/^[789]\d{9}$/)]],
       DOB: ['', Validators.required],
     });
+    this.isLoginValue =  localStorage.getItem('isLogin') == 'yes' ? true : false;
   }
 
   onSubmit(form: FormGroup) {
@@ -31,6 +33,8 @@ export class LoginComponent implements OnInit{
     console.log('Message', form.value.mobile);
     console.log('myForm',this.myForm);
     this.loginService.setVariable(true);
+    localStorage.setItem('isLogin', 'yes');
+    this.isLoginValue = true
     }else{
       alert('Please fill all the requiedDetails');
     }
@@ -42,6 +46,12 @@ export class LoginComponent implements OnInit{
       const sanitizedValue = inputControl.value.replace(/[^A-Za-z\s]/g,'');
       inputControl.setValue(sanitizedValue, {emitEvent: false});
     }
+  }
+
+  logout(){
+    localStorage.setItem('isLogin', 'no');
+    this.isLoginValue = false;
+    this.loginService.setVariable(false);
   }
 
 }
