@@ -12,10 +12,12 @@ export class LoginComponent implements OnInit{
   myForm: FormGroup | any;
   service = inject(LoginService);
   isLoginValue = false;
+  date: any;
 
   constructor(private fb: FormBuilder,private loginService: LoginService) {}
 
   ngOnInit() {
+    this.date = new Date;
     this.myForm = this.fb.group({
       username: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]*$/)]],
       email: ['', [Validators.required, Validators.email]],
